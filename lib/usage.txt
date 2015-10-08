@@ -1,0 +1,27 @@
+Usage: xa <command>
+
+xa a                set up a.com(./)
+xa ab               set up a.com(./a) b.com(./b)
+xa ls               list all versions of xampp
+xa prepare          copy the config files to the config directory
+xa set [modules]    set xampp modules
+xa shortcut         create a shortcut for xampp-control.exe
+xa use <version>    use which version of xampp
+
+`xa a` and `xa ab`
+see httpd-temp.conf for details
+
+xa ls 5.6
+print the information of version 5.6
+
+xa prepare
+run this command immediately after installing xampp,
+it will copy the config files to the config directory.
+
+xa set panel|vhosts|php|mysql
+run this command after modifying the config of module,
+it will copy the config file to the right directory
+and restart xampp
+
+readme
+https://github.com/yanxyz/xampp-windows-cli

@@ -1,0 +1,28 @@
+{
+  "name": "xampp-windows-cli",
+  "version": "1.0.0",
+  "description": "xampp windows cli",
+  "bin": {
+    "xa": "./lib/cli.js"
+  },
+  "scripts": {
+    "postinstall": "node ./postinstall.js"
+  },
+  "os": [
+    "win32"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanxyz/xampp-windows-cli.git"
+  },
+  "author": "Ivan Yan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yanxyz/xampp-windows-cli/issues"
+  },
+  "homepage": "https://github.com/yanxyz/xampp-windows-cli#readme",
+  "dependencies": {
+    "fs-extra": "^0.24.0",
+    "minimist": "^1.2.0"
+  }
+}

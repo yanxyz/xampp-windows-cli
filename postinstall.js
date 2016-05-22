@@ -7,4 +7,4 @@ const os = require('os')
 const path = require('path')
 
 fs.copySync(path.join(__dirname, 'config-sample'),
-  path.join(os.homedir(), '.xampp/config-sample'))
+  path.join(os.homedir(), 'xampp/config-sample'))

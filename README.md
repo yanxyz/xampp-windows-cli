@@ -2,45 +2,39 @@
 
 Some assistant utils for XAMPP/Windows.
 
-It's boring that I have to go into deep and diffrent directories to config
-Apache/PHP/MySql. Every time when I install or config XAMPP, I have to
-repeat these boring operations. So I write this program.
+It provides a convenience to update apache/conf/extra/httpd-vhosts.conf or
+set up a temporary vhost for current working directory.
+Check "config-sample/httpd-temp.conf" for details.
 
 ## Usage
 
 First install:
 
-- [Node.js 4.0+](https://nodejs.org/)
+- [Node.js 5.0+](https://nodejs.org/)
 - [XAMPP](https://www.apachefriends.org/download.html)
 
-After installation is successful, run the following commands in the
-command prompt:
+Allow xampp installer to launch xampp-control.exe at the last installation step.
+It's better to let Apache/MySQL autostart when launching xampp-control.exe.
 
-```bat
+![](autostart.png)
+
+Now run the following commands in the command prompt:
+
+``` bat
 npm install -g xampp-windows-cli
 xa --help
-cd /d %USERPROFILE%/.xampp
+cd /d %USERPROFILE%/xampp
 copy config-sample/config.js
 rem edit config.js
-xa prepare
-rem here suppose 5.6 is used
-cd 5.6
+
+rem here suppose 7.0 is used
+mkdir 7.0
+cd 7.0
 rem edit the config files, then run the command
 xa set
+
+xa a
 ```
-
-As you can see, I have changed the mysql datadir in the "config.js",
-and changed the default vhost in the "httpd-vhosts.conf", then I put
-the site in the DocumentRoot of this vhost. By doing so I don't have to
-backup htdocs and mysql database when uninstalling xampp.
-
-I also use "httpd-temp.conf" to quickly set up a vhost for current
-directory, see "config-sample/httpd-temp.conf" for details.
-
-Every time after changing the vhosts/php.ini/my.ini, these modules
-need to restart. This program don't directly restart them but use
-"xampp-control.exe" to start Apache/MySql, because it won't open a
-prompt window.
 
 ## License
 

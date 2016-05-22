@@ -1,27 +1,28 @@
 Usage: xa <command>
 
-xa a                set up a.com(./)
-xa ab               set up a.com(./a) b.com(./b)
-xa ls               list all versions of xampp
-xa prepare          copy the config files to the config directory
-xa set [modules]    set xampp modules
+xa a                set up a temporary vhost
+xa set              set xampp modules
 xa shortcut         create a shortcut for xampp-control.exe
+xa ls [version]     print the information of installed xampp version
 xa use <version>    use which version of xampp
+xa start            launch xampp-control.exe
+xa stop             stop Apache, mySQL, xampp-control.exe
 
-`xa a` and `xa ab`
-see httpd-temp.conf for details
+Before run command `xa a` please refer the following link
+https://github.com/yanxyz/xampp-windows-cli/blob/master/config-sample/httpd-temp.conf
 
-xa ls 5.6
-print the information of version 5.6
+Example:
+  xa a
+  shorthand for `xa a --vhost="a.com www.a.com;./"`
+  set up a temporary vhost: a.com(./)
 
-xa prepare
-run this command immediately after installing xampp,
-it will copy the config files to the config directory.
+  xa ab
+  shorthand for `xa a --vhost="a.com www.a.com;./a" --vhost="b.com www.b.com;./b"`
+  set up a.com(./a) and b.com(./b)
 
-xa set panel|vhosts|php|mysql
-run this command after modifying the config of module,
-it will copy the config file to the right directory
-and restart xampp
+  xa set [vhosts]
+  replace apache/conf/extra/httpd-vhosts.conf with custom httpd-vhosts.conf
+  and restart xampp
 
-readme
-https://github.com/yanxyz/xampp-windows-cli
+Readme
+https://github.com/yanxyz/xampp-windows-cli#readme

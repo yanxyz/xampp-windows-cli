@@ -7,6 +7,8 @@ rem stop mysql
 apache\bin\pv -f -k mysqld.exe -q
 
 rem kill all xampp-control.exe
-taskkill /f /im "xampp-control.exe"
+taskkill /f /im "xampp-control.exe" 2> nul
 
-start "" "xampp-control.exe"
+if "%2"=="no" (
+  start "" "xampp-control.exe"
+)

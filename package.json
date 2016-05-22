@@ -1,6 +1,6 @@
 {
   "name": "xampp-windows-cli",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "xampp windows cli",
   "bin": {
     "xa": "./lib/cli.js"
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/yanxyz/xampp-windows-cli#readme",
   "dependencies": {
-    "fs-extra": "^0.24.0",
+    "fs-extra": "^0.30.0",
     "minimist": "^1.2.0"
   }
 }
